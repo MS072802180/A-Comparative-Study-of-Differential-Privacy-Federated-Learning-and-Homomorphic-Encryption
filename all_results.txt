@@ -1,0 +1,46 @@
+============================================================
+PRIVACY-PRESERVING MODULATION CLASSIFICATION
+EXPERIMENTAL RESULTS
+============================================================
+
+DATASET:
+  Source: RadioML 2018.01A
+  Samples used: 16,384
+  Modulation classes: 4
+  SNR: 10 dB
+
+BASELINE MODEL:
+  Architecture: CNN (3 conv layers, BatchNorm, Dropout)
+  Test accuracy: 0.9112 (91.12%)
+
+DIFFERENTIAL PRIVACY:
+  Using Opacus with GroupNorm (DP-SGD)
+  Baseline: 0.9112
+  Noise -> Epsilon -> Accuracy:
+    Noise=0.5: epsilon=14.69, accuracy=0.7392
+    Noise=1.0: epsilon=2.12, accuracy=0.7596
+    Noise=2.0: epsilon=0.72, accuracy=0.5891
+    Noise=5.0: epsilon=0.25, accuracy=0.4024
+    Noise=10.0: epsilon=0.12, accuracy=0.3670
+
+FEDERATED LEARNING:
+  Using FedAvg with 10 rounds, 3 local epochs
+  Centralized baseline: 0.9112
+  Clients -> Accuracy:
+    2 clients: 0.9200
+    5 clients: 0.9161
+    10 clients: 0.9039
+    20 clients: 0.9069
+
+HOMOMORPHIC ENCRYPTION:
+  Scheme: CKKS via TenSEAL (linear model proof-of-concept)
+  Linear model accuracy: 0.3500
+  Encryption time: 2.46 ms/sample
+  Decryption time: 1.00 ms/sample
+  Note: CNN inference would be 100-1000x slower
+  Reference: Gilad-Bachrach et al. (2016) CryptoNets
+
+CONCLUSION:
+  - Differential Privacy: strong guarantees, 15-55% accuracy loss
+  - Federated Learning: minimal accuracy loss, requires distributed setup
+  - Homomorphic Encryption: strongest privacy, highest computational cost

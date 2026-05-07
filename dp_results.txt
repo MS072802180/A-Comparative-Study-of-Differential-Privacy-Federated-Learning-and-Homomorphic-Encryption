@@ -1,0 +1,11 @@
+Differential Privacy Results
+==============================
+Baseline Accuracy: 0.9117
+
+Noise Multiplier -> Epsilon -> Accuracy:
+  Noise=0.1: epsilon=inf, accuracy=0.8556
+  Noise=0.5: epsilon=14.69, accuracy=0.7392
+  Noise=1.0: epsilon=2.12, accuracy=0.7596
+  Noise=2.0: epsilon=0.72, accuracy=0.5891
+  Noise=5.0: epsilon=0.25, accuracy=0.4024
+  Noise=10.0: epsilon=0.12, accuracy=0.3670

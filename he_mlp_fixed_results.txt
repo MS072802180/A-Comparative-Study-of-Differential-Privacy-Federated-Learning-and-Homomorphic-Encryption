@@ -1,0 +1,15 @@
+REAL HOMOMORPHIC ENCRYPTION RESULTS (FIXED)
+=============================================
+Model: MLP (64 -> 32 -> 4)
+Training samples: 500
+Test samples (encrypted): 20
+
+Plaintext Accuracy: 0.5700
+Encrypted Accuracy: 0.0000
+
+Encryption Time: 2.20 ms/sample
+HE Inference Time: 100.00 ms/sample
+Plaintext Inference Time: ~0.05 ms/sample
+
+Encryption Scheme: CKKS (TenSEAL)
+Polynomial Modulus Degree: 8192

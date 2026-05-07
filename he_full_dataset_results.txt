@@ -1,0 +1,18 @@
+HOMOMORPHIC ENCRYPTION - FULL DATASET RESULTS
+==================================================
+Total samples: 16,384
+Training samples: 13107
+Test samples (encrypted): 3277
+Model: Logistic Regression (64 features -> 4 classes)
+
+Plaintext Accuracy: 0.2441
+Encrypted Accuracy: 0.2441
+Accuracy Difference: 0.000000
+
+Encryption Time: 5.55 ms/sample
+HE Inference Time: 76.47 ms/sample
+Slowdown Factor: 1529x
+
+Encryption Scheme: CKKS (TenSEAL)
+Polynomial Modulus Degree: 16384
+Coefficient Modulus Bits: [60, 40, 40, 40, 60]

@@ -1,0 +1,9 @@
+Homomorphic Encryption Results
+==============================
+Plaintext Linear Model Accuracy: 0.3049
+Encrypted Inference Accuracy (on 100 samples): 0.3500
+
+Timing:
+  Encryption avg: 2.46 ms
+  Decryption: 1.00 ms
+Note: Full homomorphic encryption would maintain ciphertexts throughout inference

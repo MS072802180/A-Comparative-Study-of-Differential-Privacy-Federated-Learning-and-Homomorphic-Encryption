@@ -1,0 +1,19 @@
+HOMOMORPHIC ENCRYPTION — MLP WITH x² ACTIVATION
+==================================================
+Model              : MLP (64 - 64 - 4)
+Activation         : x² (squared, HE-native)
+Train samples      : 8000
+Test samples       : 500
+
+Plaintext Accuracy : 0.6880
+Encrypted Accuracy : 0.6880
+Accuracy Gap       : 0.0000
+Errors / Failures  : 0/500
+
+Encryption Time    : 13.75 ms/sample
+HE Inference Time  : 4561.55 ms/sample
+Slowdown Factor    : 91231x
+
+Encryption Scheme  : CKKS (TenSEAL)
+Poly Modulus Degree: 32768
+Coeff Mod Bits     : [60, 40, 40, 40, 40, 60]

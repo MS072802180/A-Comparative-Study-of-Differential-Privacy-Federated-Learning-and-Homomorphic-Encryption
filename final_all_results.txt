@@ -1,0 +1,73 @@
+======================================================================
+FINAL RESULTS: PRIVACY-PRESERVING MODULATION CLASSIFICATION
+======================================================================
+
+BASELINE MODEL:
+  Architecture: CNN (3 conv layers, BatchNorm, Dropout)
+  Dataset: 16,384 samples, 4 modulation classes, SNR = 10 dB
+  Test Accuracy: 0.9112 (91.12%)
+
+======================================================================
+DIFFERENTIAL PRIVACY (DP-SGD with Opacus)
+======================================================================
+  Privacy Budget (epsilon) -> Test Accuracy:
+    epsilon = 14.69 (noise=0.5): 0.7392
+    epsilon = 2.12 (noise=1.0): 0.7596
+    epsilon = 0.72 (noise=2.0): 0.5891
+    epsilon = 0.25 (noise=5.0): 0.4024
+    epsilon = 0.12 (noise=10.0): 0.3670
+  Key Insight: Stronger privacy (smaller epsilon) reduces accuracy
+
+======================================================================
+FEDERATED LEARNING (FedAvg with Flower)
+======================================================================
+  Number of Clients -> Test Accuracy:
+    2 clients: 0.9200
+    5 clients: 0.9161
+    10 clients: 0.9039
+    20 clients: 0.9069
+  Key Insight: FL preserves accuracy well (within 1 percent of centralized)
+
+======================================================================
+HOMOMORPHIC ENCRYPTION (CKKS with TenSEAL)
+======================================================================
+  Encryption Scheme: CKKS
+  Polynomial Modulus Degree: 16384
+  Encryption Time: 5.49 ms per sample
+
+  Model 1: Logistic Regression (Linear)
+    Parameters: 256
+    Plaintext Accuracy: 0.2850
+    Encrypted Accuracy: 0.2850
+    HE Inference Time: 75.83 ms
+    Slowdown: 1517x
+
+  Model 2: MLP with x^2 Activation (Non-linear)
+    Architecture: 64 -> 64 -> 4
+    Activation: x^2 (polynomial, HE-compatible)
+    Parameters: 4352
+    Plaintext Accuracy: 0.6900
+    Encrypted Accuracy: 0.6900
+    HE Inference Time: 1516.13 ms
+    Slowdown: 30323x
+
+======================================================================
+CONCLUSIONS
+======================================================================
+1. Differential Privacy: Provides formal privacy guarantees but reduces accuracy.
+   Best for: Centralized training where regulatory compliance is required.
+
+2. Federated Learning: Preserves accuracy well but requires distributed infrastructure.
+   Best for: Multi-operator collaboration where data cannot be centralized.
+
+3. Homomorphic Encryption: Strongest input privacy but highest computational cost.
+   Best for: User-side privacy where inputs must remain encrypted in transit.
+
+4. Non-linear HE (x^2 activation) achieves 69.0% accuracy vs 28.5% for linear.
+   However, inference time is 20x slower (1516ms vs 76ms).
+
+5. No single technique dominates. Choice depends on:
+   - Required privacy level
+   - Available computational resources
+   - Deployment architecture (centralized vs distributed)
+   - Real-time constraints

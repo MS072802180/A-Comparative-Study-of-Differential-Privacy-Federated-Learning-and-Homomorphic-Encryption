@@ -1,0 +1,7 @@
+HOMOMORPHIC ENCRYPTION WORKING RESULTS
+========================================
+Model: Logistic Regression (2 classes)
+Plaintext Accuracy: 0.8000
+Encrypted Accuracy: 0.8000
+Encryption Time: 2.61 ms
+Inference Time: 11.40 ms

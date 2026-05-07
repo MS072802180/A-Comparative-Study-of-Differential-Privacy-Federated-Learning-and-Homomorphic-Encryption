@@ -1,0 +1,8 @@
+HOMOMORPHIC ENCRYPTION - NONLINEAR MODEL
+=============================================
+Plaintext MLP Accuracy (with ReLU): 0.7850
+Encrypted Accuracy (linear approx): 0.0000
+Accuracy Difference: 0.7850
+
+Encryption Time: 5.32 ms
+HE Inference Time: 680.20 ms

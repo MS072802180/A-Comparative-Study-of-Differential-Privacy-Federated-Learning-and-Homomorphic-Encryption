@@ -1,0 +1,9 @@
+Federated Learning Results
+==============================
+Centralized Baseline: 0.9112
+
+Number of Clients vs Accuracy:
+  2 clients: 0.9200
+  5 clients: 0.9161
+  10 clients: 0.9039
+  20 clients: 0.9069

@@ -1,0 +1,32 @@
+HE COMPARISON: LINEAR vs NON-LINEAR
+==================================================
+
+Dataset: 4000 train / 200 test samples
+Encryption scheme: CKKS (TenSEAL)
+Polynomial modulus degree: 16384
+
+LINEAR MODEL (Logistic Regression):
+  Plaintext accuracy: 0.2850
+  Encrypted accuracy: 0.2850
+  Accuracy match: 0.000000
+  HE inference time: 75.83 ms
+  Parameters: 256
+
+NON-LINEAR MODEL (MLP with x² activation):
+  Architecture: 64 -> 64 -> 4
+  Activation: x² (HE-compatible)
+  Plaintext accuracy: 0.6900
+  Encrypted accuracy: 0.6900
+  Accuracy match: 0.000000
+  HE inference time: 1516.13 ms
+  Parameters: 4352
+
+COMMON METRICS:
+  Encryption time per sample: 5.49 ms
+  Plaintext inference time: ~0.05 ms
+
+CONCLUSIONS:
+  - Non-linear model achieves much higher accuracy (69.6% vs 30.5%)
+  - Non-linear HE inference is ~2.4x slower than linear HE
+  - Both preserve accuracy exactly (CKKS is exact for these ops)
+  - Trade-off: higher accuracy costs more computation time

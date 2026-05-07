@@ -1,0 +1,60 @@
+Federated Learning Results
+==============================
+Centralized Baseline: 0.9271
+
+Number of Clients vs Accuracy:
+  2 clients: 0.9204
+  5 clients: 0.9100
+  10 clients: 0.9094
+  20 clients: 0.9014
+
+
+Detailed round-by-round accuracy:
+
+2 clients:
+  Round 1: 0.9036
+  Round 2: 0.9060
+  Round 3: 0.9027
+  Round 4: 0.9112
+  Round 5: 0.9136
+  Round 6: 0.9179
+  Round 7: 0.9078
+  Round 8: 0.9185
+  Round 9: 0.9170
+  Round 10: 0.9204
+
+5 clients:
+  Round 1: 0.8645
+  Round 2: 0.8953
+  Round 3: 0.9094
+  Round 4: 0.9027
+  Round 5: 0.9051
+  Round 6: 0.9106
+  Round 7: 0.9115
+  Round 8: 0.9143
+  Round 9: 0.9152
+  Round 10: 0.9100
+
+10 clients:
+  Round 1: 0.8785
+  Round 2: 0.8874
+  Round 3: 0.9002
+  Round 4: 0.9027
+  Round 5: 0.9048
+  Round 6: 0.9097
+  Round 7: 0.9091
+  Round 8: 0.9094
+  Round 9: 0.9085
+  Round 10: 0.9094
+
+20 clients:
+  Round 1: 0.8480
+  Round 2: 0.8831
+  Round 3: 0.8880
+  Round 4: 0.8843
+  Round 5: 0.8923
+  Round 6: 0.8972
+  Round 7: 0.8962
+  Round 8: 0.8975
+  Round 9: 0.9008
+  Round 10: 0.9014
